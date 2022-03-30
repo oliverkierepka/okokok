@@ -1,0 +1,94 @@
+{
+  "projectType": "application",
+  "root": "apps/designsystem",
+  "sourceRoot": "apps/designsystem/src",
+  "prefix": "rhenag",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/designsystem",
+        "index": "apps/designsystem/src/index.html",
+        "main": "apps/designsystem/src/main.ts",
+        "polyfills": "apps/designsystem/src/polyfills.ts",
+        "tsConfig": "apps/designsystem/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/designsystem/src/favicon.ico",
+          "apps/designsystem/src/assets"
+        ],
+        "styles": ["apps/designsystem/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/designsystem/src/environments/environment.ts",
+              "with": "apps/designsystem/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "designsystem:build:production"
+        },
+        "development": {
+          "browserTarget": "designsystem:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "designsystem:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/designsystem/src/**/*.ts",
+          "apps/designsystem/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/designsystem"],
+      "options": {
+        "jestConfig": "apps/designsystem/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

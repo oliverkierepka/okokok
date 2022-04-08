@@ -1,12 +1,35 @@
+# Rhenag Designsystem Monorepo
 
+This monorepo is the home of the rhenag designsystem.
+It contains rhenag elements – the component library for lima 2.0, the rhenag icon library and themes for rhenag (default for components) and lima 2.0.
 
-# Rhenag
+- [Rhenag Designsystem Monorepo](#rhenag-designsystem-monorepo)
+  - [Development workflow](#development-workflow)
+    - [Creating new components](#creating-new-components)
+  - [Quick Start & Documentation](#quick-start--documentation)
+  - [Generate an application](#generate-an-application)
+  - [Generate a library](#generate-a-library)
+  - [Development server](#development-server)
+  - [Code scaffolding](#code-scaffolding)
+  - [Build](#build)
+  - [Running unit tests](#running-unit-tests)
+  - [Running end-to-end tests](#running-end-to-end-tests)
+  - [Understand your workspace](#understand-your-workspace)
+  - [Further help](#further-help)
+  - [☁ Nx Cloud](#-nx-cloud)
+    - [Distributed Computation Caching & Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
 
-This project was generated using [Nx](https://nx.dev).
+## Development workflow
 
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+The component library called @rhenag/elements is hosted under /src/libs/elements.
 
-🔎 **Smart, Fast and Extensible Build System**
+1. Run <code>nx serve</code> to start the development server serving the default project which is <code>designsystem</code>
+2. Make some changes to an existing component
+3. Run <code>nx </code>
+
+### Creating new components
+
+To create a new component run <code>nx g component [componentname] --project=@rhenag/elements --export</code>
 
 ## Quick Start & Documentation
 
@@ -15,29 +38,6 @@ This project was generated using [Nx](https://nx.dev).
 [10-minute video showing all Nx features](https://nx.dev/getting-started/intro)
 
 [Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
-
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are our core plugins:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
 
 ## Generate an application
 
@@ -87,11 +87,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
 
-
-
-
-
-
 ## ☁ Nx Cloud
 
 ### Distributed Computation Caching & Distributed Task Execution
@@ -103,3 +98,9 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+This project was generated using [Nx](https://nx.dev).
+
+<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="450"></p>
+
+🔎 **Smart, Fast and Extensible Build System**

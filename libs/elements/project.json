@@ -1,0 +1,33 @@
+{
+  "projectType": "library",
+  "root": "libs/elements",
+  "sourceRoot": "libs/elements/src",
+  "prefix": "rh",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/elements"],
+      "options": {
+        "jestConfig": "libs/elements/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/elements/src/**/*.ts",
+          "libs/elements/src/**/*.html"
+        ]
+      }
+    },
+    "stylelint": {
+      "executor": "nx-stylelint:lint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/elements/**/*.css"]
+      }
+    }
+  },
+  "tags": []
+}

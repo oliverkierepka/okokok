@@ -14,7 +14,10 @@
 		"format": "nx format:write",
 		"graph": "nx graph",
 		"graph:affected": "nx affected:graph",
-		"graph:watch": "nx graph --watch"
+		"graph:watch": "nx graph --watch",
+		"stylelint": "nx stylelint",
+		"stylelint:fix": "nx stylelint --fix",
+		"stylelint:affected": "nx affected --target=stylelint"
 	},
 	"private": true,
 	"dependencies": {
@@ -58,6 +61,7 @@
 		"nx": "13.9.5",
 		"nx-stylelint": "^13.3.0",
 		"prettier": "^2.5.1",
+		"style-dictionary": "^3.7.0",
 		"stylelint": "^14.5.3",
 		"stylelint-config-prettier": "^9.0.3",
 		"stylelint-config-prettier-scss": "^0.0.1",

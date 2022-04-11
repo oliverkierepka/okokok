@@ -7,10 +7,6 @@
 	"[yaml]": {
 		"editor.useTabStops": false
 	},
-	"sonarlint.connectedMode.project": {
-		"connectionId": "rhenag",
-		"projectKey": "lima-2-ui"
-	},
 	"typescript.tsdk": "node_modules\\typescript\\lib",
 	"editor.defaultFormatter": "esbenp.prettier-vscode"
 }

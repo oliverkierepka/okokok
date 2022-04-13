@@ -5,3 +5,4 @@ coverage
 reports
 package.json
 cypresss/mocks
+.browserslistrc

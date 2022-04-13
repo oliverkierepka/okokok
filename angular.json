@@ -1,6 +1,7 @@
 {
 	"version": 2,
 	"projects": {
+		"components": "libs/components",
 		"designsystem": "apps/designsystem",
 		"designsystem-e2e": "apps/designsystem-e2e",
 		"elements": "libs/elements"

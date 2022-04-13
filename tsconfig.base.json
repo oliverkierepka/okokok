@@ -15,6 +15,7 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
+			"@rhenag/components": ["libs/components/src/index.ts"],
 			"@rhenag/elements": ["libs/elements/src/index.ts"]
 		}
 	},

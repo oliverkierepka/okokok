@@ -13,7 +13,10 @@
 			"devDependencies": "*"
 		},
 		".eslintrc.json": "*",
-		".stylelintrc.json": "*"
+		".stylelintrc.json": "*",
+		"scripts": {
+			"check:*": "*"
+		}
 	},
 	"tasksRunnerOptions": {
 		"default": {
@@ -46,7 +49,10 @@
 		},
 		"@nrwl/angular:library": {
 			"linter": "eslint",
-			"unitTestRunner": "jest"
+			"unitTestRunner": "jest",
+			"addModuleSpec": true,
+			"publishable": true,
+			"prefix": "rh"
 		},
 		"@nrwl/angular:component": {
 			"style": "scss"

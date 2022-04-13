@@ -2,7 +2,7 @@
 	"projectType": "application",
 	"root": "apps/designsystem",
 	"sourceRoot": "apps/designsystem/src",
-	"prefix": "rhenag",
+	"prefix": "rh",
 	"targets": {
 		"build": {
 			"executor": "@angular-devkit/build-angular:browser",
@@ -100,5 +100,5 @@
 			}
 		}
 	},
-	"tags": ["scope:app"]
+	"tags": ["scope:designsystem"]
 }

@@ -1,35 +1,35 @@
 # Rhenag Designsystem Monorepo
 
 This monorepo is the home of the rhenag designsystem.
-It contains rhenag elements – the component library for lima 2.0, the rhenag icon library and themes for rhenag (default for components) and lima 2.0.
+It contains rhenag elements – the component library for rhenag, the rhenag icon library, themes for rhenag components and lima 2.0 ("rhenag" is the default theme for elements) and design a designtokens which contains all the colors, sizes, fonts, icons, etc. that are used throughout the whole rhenag ecosystem.
 
 - [Rhenag Designsystem Monorepo](#rhenag-designsystem-monorepo)
-  - [Development workflow](#development-workflow)
-    - [Creating new components](#creating-new-components)
-  - [Quick Start & Documentation](#quick-start--documentation)
-  - [Generate an application](#generate-an-application)
-  - [Generate a library](#generate-a-library)
-  - [Development server](#development-server)
-  - [Code scaffolding](#code-scaffolding)
-  - [Build](#build)
-  - [Running unit tests](#running-unit-tests)
-  - [Running end-to-end tests](#running-end-to-end-tests)
-  - [Understand your workspace](#understand-your-workspace)
-  - [Further help](#further-help)
-  - [☁ Nx Cloud](#-nx-cloud)
-    - [Distributed Computation Caching & Distributed Task Execution](#distributed-computation-caching--distributed-task-execution)
+	- [Development workflow](#development-workflow)
+		- [Creating new components](#creating-new-components)
+	- [Quick Start & Documentation](#quick-start--documentation)
+	- [Generate a new application](#generate-a-new-application)
+	- [Generate a new library](#generate-a-new-library)
+	- [Development server](#development-server)
+	- [Code scaffolding](#code-scaffolding)
+	- [Build](#build)
+	- [Running unit tests](#running-unit-tests)
+	- [Running end-to-end tests](#running-end-to-end-tests)
+	- [Understand your workspace](#understand-your-workspace)
+	- [Further help](#further-help)
 
 ## Development workflow
 
+The app documenting all libraries is hosted under /src/app/designsystem
 The component library called @rhenag/elements is hosted under /src/libs/elements.
 
-1. Run <code>nx serve</code> to start the development server serving the default project which is <code>designsystem</code>
+1. Run <code>nx serve</code> to start the development server serving the default project which is <code>designsystem</code>. Navigate to http://localhost:4200
 2. Make some changes to an existing component
-3. Run <code>nx </code>
+3. See the design system automatically reflect your changes.
+4. Commit your changes
 
 ### Creating new components
 
-To create a new component run <code>nx g component [componentname] --project=@rhenag/elements --export</code>
+To create a new component run <code>nx g component [componentname] --project=@rhenag/components --export</code>. The new component is scaffoled into the folder <code>/src/lib/components</code>.
 
 ## Quick Start & Documentation
 
@@ -39,7 +39,7 @@ To create a new component run <code>nx g component [componentname] --project=@rh
 
 [Interactive Tutorial](https://nx.dev/tutorial/01-create-application)
 
-## Generate an application
+## Generate a new application
 
 Run `ng g @nrwl/angular:app my-app` to generate an application.
 
@@ -47,9 +47,11 @@ Run `ng g @nrwl/angular:app my-app` to generate an application.
 
 When using Nx, you can create multiple applications and libraries in the same workspace.
 
-## Generate a library
+## Generate a new library
 
 Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+
+`nx g lib --importPath=@rhenag/mylib --name=mylib --tags=scope:mylib`
 
 > You can also use any of the plugins above to generate libraries as well.
 
@@ -61,7 +63,7 @@ Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The 
 
 ## Code scaffolding
 
-Run `ng g component my-component --project=my-app` to generate a new component.
+Run `ng g component my-component --project=my-app` to generate a new component. The new app will be scaffoled in the <code>/src/app</code> folder.
 
 ## Build
 
@@ -86,18 +88,6 @@ Run `nx graph` to see a diagram of the dependencies of your projects.
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
-
-## ☁ Nx Cloud
-
-### Distributed Computation Caching & Distributed Task Execution
-
-<p style="text-align: center;"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-cloud-card.png"></p>
-
-Nx Cloud pairs with Nx in order to enable you to build and test code more rapidly, by up to 10 times. Even teams that are new to Nx can connect to Nx Cloud and start saving time instantly.
-
-Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
-
-Visit [Nx Cloud](https://nx.app/) to learn more.
 
 This project was generated using [Nx](https://nx.dev).
 

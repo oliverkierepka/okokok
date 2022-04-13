@@ -1,0 +1,11 @@
+package.json
+package-lock.json
+dist
+e2e/**
+commitlint.config.js
+__tests__/
+__mocks__/
+dist/
+config/
+coverage/
+test-reports/

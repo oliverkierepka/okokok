@@ -1,21 +1,30 @@
 {
 	"name": "@rhenag/designtokens",
 	"version": "0.0.1",
-	"description": "Rhenag design tokens for @rhenag/elements",
-	"main": "build/index.js",
+	"description": "Rhenag design tokens for @rhenag/elements based on angular material",
 	"files": [
-	  "build",
-	  "properties"
+		"build",
+		"properties"
 	],
 	"scripts": {
-	  "build": "style-dictionary build",
-	  "clean": "rm -rf build",
-      "prepublishOnly": "npm run build",
-	  "test": "echo \"Error: no test specified\" && exit 1"
+		"build": "style-dictionary build --config ./config.js",
+		"clean": "rm -rf build",
+		"transform-figma-tokens": "node ./transform-figma-tokens.js",
+		"test": "jest tests --coverage=false"
 	},
 	"author": "Oliver Kierepka <oliver.kierepka@rhenag.de>",
 	"license": "Apache-2.0",
+	"dependencies": {
+		"style-dictionary": "^3"
+	},
 	"devDependencies": {
-	  "style-dictionary": "^3.7.0"
+		"@types/jest": "^27.0.3",
+		"jest": "^27.0.6",
+		"tinycolor2": "^1.4.2",
+		"ts-jest": "^27.0.3"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://git-lima.rhenag.de/design-system/design-token-transformer.git"
 	}
-  }
+}

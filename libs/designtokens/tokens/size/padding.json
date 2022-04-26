@@ -1,0 +1,19 @@
+{
+	"size": {
+		"padding": {
+			"tiny": { "value": "0.25" },
+			"small": { "value": "0.5" },
+			"medium": { "value": "1" },
+			"large": { "value": "1.5" },
+			"xl": { "value": "2" },
+			"xxl": {
+				"value": "3",
+				"comment": "XXL padding used for great distances."
+			},
+			"base": {
+				"value": "{size.padding.medium.value}",
+				"comment": "The base padding is medium"
+			}
+		}
+	}
+}

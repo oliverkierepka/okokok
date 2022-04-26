@@ -10,6 +10,6 @@ export class ButtonComponent {
 	@Output() buttonClicked: EventEmitter<string> = new EventEmitter<string>();
 
 	onClick() {
-		this.buttonClicked.emit('Button clicked');
+		this.buttonClicked.emit('Button has been clicked');
 	}
 }

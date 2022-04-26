@@ -1,42 +1,27 @@
-# Basic Style Dictionary
+# Design Tokens
 
-This example code is bare-bones to show you what this framework can do. If you have the style-dictionary module installed globally, you can `cd` into this directory and run:
+This is the home of rhenag design tokens.
+It uses style-dictionary to transform platform independent designtoken.json files to generate platform specific output formats (like scss, css, plist, xml, ...). The configuration is found in config.js
 
-```bash
-style-dictionary build
-```
+## Design Token Transformer
 
-You should see something like this output:
+This repo provides an npm script which is bound to a gitlab action. This action receives a json file exported by figma design-tokens extension and automatically transforms it to the specified platforms and formats.
 
-```
-Copying starter files...
-
-Source style dictionary starter files created!
-
-Running `style-dictionary build` for the first time to generate build artifacts.
-
-
-scss
-✔︎  build/scss/_variables.scss
-```
-
-Good for you! You have now built your first style dictionary! Moving on, take a look at what we have built. This should have created a build directory and it should look like this:
+## What is where?
 
 ```
-├── README.md
-├── config.json
-├── tokens/
-│   ├── color/
-│       ├── base.json
-│       ├── font.json
-│   ├── size/
-│       ├── font.json
-├── build/
-│   ├── scss/
-│      ├── _variables.scss
+├── …
+├── config.json <--- style-dictionary configuration
+├── tokens/ <--- the design-tokens folder (the structure of the subfolders and files follows [style dictionarys CTI paradigmn](https://amzn.github.io/style-dictionary/#/tokens?id=category-type-item))
+├── build/ <--- the output folder of style dictionary
+├── …
 ```
 
-If you open `config.json` you will see there are 5 platforms defined: scss and sketch. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
+## Build
+
+Run `style-dictionary build` to build the design tokens for the defined platforms and formats.
+
+If you open `config.json` you will see there are 2 platforms defined: scss and sketch. Each platform has a transformGroup, buildPath, and files. The buildPath and files of the platform should match up to the files what were built. The files built should look like these:
 
 **SCSS**
 

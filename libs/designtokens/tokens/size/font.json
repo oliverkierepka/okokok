@@ -1,0 +1,37 @@
+{
+	"size": {
+		"font": {
+			"tiny": {
+				"value": "0.75",
+				"comment": "Used for footnotes and micro copy"
+			},
+			"small": { "value": "0.875", "comment": "Used for small text" },
+			"medium": {
+				"value": "1",
+				"comment": "normal font size also used as base",
+				"deprecated": true,
+				"deprecated_comment": "replace with the \"large\" size"
+			},
+			"large": {
+				"value": "1.25",
+				"comment": "normally used for third-level headlines"
+			},
+			"xl": {
+				"value": "1.5",
+				"comment": "Used for second-level headlines"
+			},
+			"xxl": {
+				"value": "2",
+				"comment": "Used for first level headlines"
+			},
+			"xxxl": {
+				"value": "3",
+				"comment": "Used for really verbose Page headers"
+			},
+			"base": {
+				"value": "{size.font.medium.value}",
+				"comment": "Base font size for body-copy"
+			}
+		}
+	}
+}

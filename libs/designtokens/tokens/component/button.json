@@ -1,0 +1,23 @@
+{
+	"component": {
+		"button": {
+			"padding": { "value": "{size.padding.medium.value}" },
+			"font-size": { "value": 2 },
+			"text-align": { "value": "center" },
+
+			"primary": {
+				"background-color": {
+					"value": "{color.primary.value}"
+				},
+				"color": { "value": "{color.on-primary.value}" }
+			},
+
+			"secondary": {
+				"background-color": {
+					"value": "{color.secondary.value}"
+				},
+				"color": { "value": "{color.on-secondary.value}" }
+			}
+		}
+	}
+}

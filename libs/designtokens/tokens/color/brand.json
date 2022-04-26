@@ -1,0 +1,26 @@
+{
+	"color": {
+		"brand": {
+			"primary": {
+				"lighter": { "value": "{color.base.blue.100.value}" },
+				"light": { "value": "{color.base.blue.300.value}" },
+				"base": {
+					"value": "{color.base.blue.500.value}",
+					"deprecated": true,
+					"deprecated_comment": "replace with the \"base-new\" color"
+				},
+				"base-new": { "value": "{color.base.blue.600.value}" },
+				"dark": { "value": "{color.base.blue.700.value}" },
+				"darker": { "value": "{color.base.blue.900.value}" }
+			},
+
+			"secondary": {
+				"lighter": { "value": "{color.base.orange.100.value}" },
+				"light": { "value": "{color.base.orange.300.value}" },
+				"base": { "value": "{color.base.orange.500.value}" },
+				"dark": { "value": "{color.base.orange.700.value}" },
+				"darker": { "value": "{color.base.orange.900.value}" }
+			}
+		}
+	}
+}

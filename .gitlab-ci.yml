@@ -4,7 +4,7 @@ default:
 
 stages:
     - build
-    #- deploy
+    - publish
 
 .npmPrepare:
     before_script:
@@ -33,13 +33,9 @@ buildFigmaTokens:
         # commit-message: "Update Design Tokens"
         # body: "Design tokens have been updated and need to be reviewed."
         # ms teams notification about newly created pull request (gitlab webhooks?)
-      
-      # When the MR is reviewed and merged...
-        # bump the version number in package json
-        # Create a release-tag (e.g. release-1.2.3) 
-        # publish to nexus
-        # notify in msteams channel about new available design token version
+ 
 
+# Build tokens on updating the json file manually
 buildTokensManually:
   interruptible: true
   stage: build
@@ -62,10 +58,15 @@ buildTokensManually:
       # commit-message: "Update Design Tokens"
       # body: "Design tokens have been updated and need to be reviewed."
       # ms teams notification about newly created pull request (gitlab webhooks?)
-    
-    # When the MR is reviewed and merged...
-      # bump the version number in package json
-      # Create a release-tag (e.g. release-1.2.3) 
-      # publish to nexus
-      # notify in msteams channel about new available design token version
-      
+
+publishTokens:
+  interruptible: true
+  stage: publish
+  extends: .npmPrepare
+  script:
+   # When the MR is reviewed and merged...
+    # bump the version number in package json
+    # Create a release-tag (e.g. release-1.2.3) 
+    # publish to nexus
+    # notify in msteams channel about new available design token version
+  

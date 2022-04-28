@@ -1,36 +1,33 @@
 {
 	"asset": {
 		"font": {
-			"icon": {
-				"name": { "value": "MaterialIcons" },
-				"ttf": { "value": "assets/fonts/MaterialIcons-Regular.ttf" },
-				"eot": { "value": "assets/fonts/MaterialIcons-Regular.eot" },
-				"woff": { "value": "assets/fonts/MaterialIcons-Regular.woff" },
-				"woff2": { "value": "assets/fonts/MaterialIcons-Regular.woff2" }
-			},
-			"roboto": {
-				"name": { "value": "Roboto" },
-				"ttf": { "value": "assets/fonts/Roboto-Regular.ttf" }
+			"MaterialIcons": {
+				"500": {
+					"normal": {
+						"value": "MaterialIcons/MaterialIcons-Regular",
+						"formats": ["ttf", "eot", "woff", "woff2"]
+					}
+				}
 			},
 			"Roboto": {
 				"400": {
 					"normal": {
-						"value": "fonts/roboto-V20-latin-regular",
-						"formats": ["woff2", "woff"]
+						"value": "Roboto/Roboto-Regular",
+						"formats": ["ttf"]
 					},
 					"italic": {
-						"value": "fonts/roboto-V20-latin-italic",
-						"formats": ["woff2", "woff"]
+						"value": "Roboto/Roboto-Italic",
+						"formats": ["ttf"]
 					}
 				},
 				"700": {
 					"normal": {
-						"value": "fonts/roboto-V20-latin-700",
-						"formats": ["woff2", "woff"]
+						"value": "Roboto/Roboto-Bold",
+						"formats": ["ttf"]
 					},
 					"italic": {
-						"value": "fonts/roboto-V20-latin-700italic",
-						"formats": ["woff2", "woff"]
+						"value": "Roboto/Roboto-BoldItalic",
+						"formats": ["ttf"]
 					}
 				}
 			}

@@ -82,6 +82,44 @@ module.exports = {
 		},
 	},
 	platforms: {
+		'css-font-face': {
+			transforms: ['attribute/font'],
+			buildPath: 'build/css/',
+			files: [
+				{
+					destination: 'fonts.css',
+					format: 'font-face',
+					filter: {
+						attributes: {
+							category: 'asset',
+							type: 'font',
+						},
+					},
+					options: {
+						fontPathPrefix: '../assets/',
+					},
+				},
+			],
+		},
+		'scss-font-face': {
+			transforms: ['attribute/font'],
+			buildPath: 'build/scss/',
+			files: [
+				{
+					destination: '_fonts.scss',
+					format: 'font-face',
+					filter: {
+						attributes: {
+							category: 'asset',
+							type: 'font',
+						},
+					},
+					options: {
+						fontPathPrefix: '#{$font-path}/',
+					},
+				},
+			],
+		},
 		'esm/category': {
 			prefix,
 			buildPath: 'build/js/esm/',
@@ -124,7 +162,7 @@ module.exports = {
 				'attribute/cti',
 				'name/cti/camel',
 				'size/px',
-				'color/hex',
+				'color/hsl',
 			],
 			files: tokens.map((tokenCategory) => ({
 				destination: `${tokenCategory}.js`,
@@ -157,7 +195,14 @@ module.exports = {
 
 		css: {
 			prefix: 'rh',
-			transformGroup: 'css',
+			transforms: [
+				'attribute/cti',
+				'name/cti/kebab',
+				'time/seconds',
+				'content/icon',
+				'size/rem',
+				'color/hsl',
+			],
 			buildPath: `build/`,
 			files: [
 				{
@@ -169,10 +214,15 @@ module.exports = {
 				},
 				{
 					destination: `scss/tokens.scss`,
-					format: 'scss/variables',
+					format: 'custom/format/scss',
 					options: {
 						outputReferences: true,
 					},
+				},
+				{
+					destination: 'scss/map.scss',
+					format: 'scss/map-deep',
+					mapName: 'my-tokens',
 				},
 			],
 		},
@@ -183,7 +233,7 @@ module.exports = {
 			buildPath: `build/scss/`,
 			files: tokens.map((tokenCategory) => ({
 				destination: `_${tokenCategory}.scss`,
-				format: 'scss/variables',
+				format: 'custom/format/scss',
 				filter: {
 					attributes: {
 						category: tokenCategory,
@@ -250,7 +300,7 @@ StyleDictionary.registerFormat({
 
 				const urls = formats.map(
 					(extension) =>
-						`url("${fontPathPrefix}${path}.${extension}") format("${formatsMap[extension]}")`
+						`url("${fontPathPrefix}fonts/${path}.${extension}") format("${formatsMap[extension]}")`
 				);
 
 				const fontCss = [

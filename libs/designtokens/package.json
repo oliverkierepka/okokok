@@ -7,7 +7,8 @@
 		"properties"
 	],
 	"scripts": {
-		"build": "style-dictionary build --config ./config.js",
+		"build": "node ./build.js",
+		"build:watch": "npm run build -- --watch",
 		"clean": "rm -rf build",
 		"transform-figma-tokens": "node ./transform-figma-tokens.js",
 		"test": "jest tests --coverage=false"
@@ -19,6 +20,7 @@
 	},
 	"devDependencies": {
 		"@types/jest": "^27.0.3",
+		"chokidar-cli": "^3.0.0",
 		"jest": "^27.0.6",
 		"tinycolor2": "^1.4.2",
 		"ts-jest": "^27.0.3"

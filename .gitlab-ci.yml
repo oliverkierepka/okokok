@@ -1,5 +1,4 @@
-# Name of the action visible in the action overview
-name: Transform tokens send from figma
+# Transform tokens send from figma
 image: image-registry.openshift-image-registry.svc:5000/openshift/nodejs:14-ubi8
 
 stages:

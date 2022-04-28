@@ -1,6 +1,8 @@
 const StyleDictionary = require('style-dictionary');
 const Color = require('tinycolor2');
 const tokens = require('./tokens');
+const fs = require('fs');
+const _ = require('lodash');
 
 const transformer = StyleDictionary.transform['attribute/cti'].transformer;
 
@@ -247,7 +249,7 @@ module.exports = {
 			buildPath: 'build/',
 			files: [
 				{
-					destination: 'style-dictionary.sketchpalette',
+					destination: 'style-dictionary.sketch',
 					format: 'sketch/palette',
 					filter: {
 						attributes: {
@@ -272,6 +274,13 @@ StyleDictionary.registerTransform({
 		weight: prop.path[3],
 		style: prop.path[4],
 	}),
+});
+
+StyleDictionary.registerFormat({
+	name: 'custom/format/scss',
+	formatter: _.template(
+		fs.readFileSync(__dirname + '/templates/web-scss.template')
+	),
 });
 
 // Register a custom format to generate @font-face rules.

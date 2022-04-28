@@ -20,8 +20,7 @@
 		"stylelint:fix": "nx stylelint --fix",
 		"graph": "nx graph",
 		"graph:affected": "nx affected:graph",
-		"graph:watch": "nx graph --watch",
-		"designtokens:build": "style-dictionary build -c libs/designtokens/config.json"
+		"graph:watch": "nx graph --watch"
 	},
 	"private": true,
 	"dependencies": {

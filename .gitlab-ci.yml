@@ -1,0 +1,19 @@
+image: image-registry.openshift-image-registry.svc:5000/openshift/nodejs:14-ubi8
+
+stages:
+    - build
+
+.npmPrepare:
+    before_script:
+        - pwd
+        - cd libs/designtokens
+        - npm ci
+
+buildDev:
+    stage: build
+    only:
+        - main
+    extends: .npmPrepare
+    script:
+        - npm run clean # clear previous build
+        - npm run transform-figma-tokens

@@ -64,6 +64,7 @@ publishTokens:
   stage: publish
   extends: .npmPrepare
   script:
+    - echo 'publish and release'
    # When the MR is reviewed and merged...
     # bump the version number in package json
     # Create a release-tag (e.g. release-1.2.3) 

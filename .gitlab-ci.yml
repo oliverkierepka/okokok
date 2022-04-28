@@ -14,8 +14,8 @@ build:
     # the name for the entire job
     name: Transform Figma design tokens for specific platforms
     stage: build
-    #only:
-        #- triggers
+    only:
+      - triggers
     extends: .npmPrepare
     script:
         - cat $TRIGGER_PAYLOAD

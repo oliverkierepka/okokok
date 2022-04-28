@@ -4,7 +4,7 @@ default:
 
 stages:
     - build
-    - deploy
+    #- deploy
 
 .npmPrepare:
     before_script:
@@ -18,27 +18,27 @@ buildFigmaTokens:
       - triggers
     extends: .npmPrepare
     script:
-        - cat $TRIGGER_PAYLOAD
-        - npm run clean # clear previous build
-        - npm run transform-figma-tokens
-        - echo 'Trying to create "tokens" directory...'
-        - mkdir -p tokens
-        - echo 'create json from request body'
-        # this creates a json file from the stringified json from the request body
-          # 'design-tokens.tokens.json'
-          # it uses the json string that was send as the tokens parameter
-          # dir: 'tokens'
-               
-        # We now create a pull request
-          # commit-message: "Update Design Tokens"
-          # body: "Design tokens have been updated and need to be reviewed."
-          # ms teams notification about newly created pull request (gitlab webhooks?)
-        
-        # When the MR is reviewed and merged...
-          # bump the version number in package json
-          # Create a release-tag (e.g. release-1.2.3) 
-          # publish to nexus
-          # notify in msteams channel about new available design token version
+      - cat $TRIGGER_PAYLOAD
+      - npm run clean # clear previous build
+      - npm run transform-figma-tokens
+      - echo 'Trying to create "tokens" directory...'
+      - mkdir -p tokens
+      - echo 'create json from request body'
+      # this creates a json file from the stringified json from the request body
+        # echo 'design-tokens.tokens.json'
+        # it uses the json string that was send as the tokens parameter
+        # dir: 'tokens'
+              
+      # We now create a pull request
+        # commit-message: "Update Design Tokens"
+        # body: "Design tokens have been updated and need to be reviewed."
+        # ms teams notification about newly created pull request (gitlab webhooks?)
+      
+      # When the MR is reviewed and merged...
+        # bump the version number in package json
+        # Create a release-tag (e.g. release-1.2.3) 
+        # publish to nexus
+        # notify in msteams channel about new available design token version
 
 buildTokensManually:
   interuptable: true

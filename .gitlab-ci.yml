@@ -14,13 +14,17 @@ build:
     # the name for the entire job
     name: Transform Figma design tokens for specific platforms
     stage: build
-    only:
-        - triggers
+    #only:
+        #- triggers
     extends: .npmPrepare
     script:
         - cat $TRIGGER_PAYLOAD
         - npm run clean # clear previous build
         - npm run transform-figma-tokens
+        - echo 'Trying to create "tokens" directory...'
+        - mkdir -p tokens
+        - echo 'create json from request body'
+        - #create json file out of
 
 
 

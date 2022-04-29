@@ -18,15 +18,14 @@ buildFigmaTokens:
       - triggers
     extends: .npmPrepare
     script:
-      - cat $TRIGGER_PAYLOAD
+      - cat $TRIGGER_PAYLOAD # see whats send by the figma plugin
       - npm run clean # clear previous build
       - npm run transform-figma-tokens
       - echo 'Trying to create "tokens" directory...'
       - mkdir -p tokens
       - echo 'create json from request body'
-      # this creates a json file from the stringified json from the request body
+      # create a json file from the stringified json from the request body
         # echo 'design-tokens.tokens.json'
-        # it uses the json string that was send as the tokens parameter
         # dir: 'tokens'
               
       # We now create a pull request

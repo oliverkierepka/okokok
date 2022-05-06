@@ -4,23 +4,102 @@ image: image-registry.openshift-image-registry.svc:5000/openshift/nodejs:14-ubi8
 
 stages:
     - build
+    - analyze
+    - verify
 
 .npmPrepare:
     before_script:
-        - cd libs/designtokens
         - npm ci
+
+cache: &global_cache
+    paths:
+        - .npm/
+        - node_modules/
+        - cache/Cypress/
+        - .sonar/cache/
+
+codeanalysis:
+    interruptible: true
+    extends: .npmPrepare
+    cache:
+        <<: *global_cache
+        policy: pull
+    stage: analyze
+    variables:
+        SONAR_USER_HOME: "${CI_PROJECT_DIR}/.sonar"  # Defines the location of the analysis task cache
+        GIT_DEPTH: "0"  # Tells git to fetch all the branches of the project, required by the analysis task
+    script:
+        - npm run codeanalytics
+    only:
+        - main # or the name of your main branch
+        - dev
+    allow_failure: true
+
+lint:
+    interruptible: true
+    stage: verify
+    extends: .npmPrepare
+    needs:
+        - job: prepare_npm
+          artifacts: false
+    cache:
+        <<: *global_cache
+        policy: pull
+    script:
+        - npm run format:check
+        - npm run lint
+
+unittest:
+    interruptible: true
+    stage: verify
+    extends: .npmPrepare
+    needs:
+        - job: prepare_npm
+          artifacts: true
+    cache:
+        <<: *global_cache
+        policy: pull
+    script:
+        - free -h
+        - npm run test:ci
+    artifacts:
+        paths:
+            - coverage
+        reports:
+            junit: jest/junit.xml
+
+build-for-e2e:
+    interruptible: true
+    stage: verify
+    extends: .npmPrepare
+    needs:
+        - job: prepare_npm
+          artifacts: true
+    cache:
+        <<: *global_cache
+        policy: pull
+    script:
+        - npm run build:rhenag-dev-coverage
+    artifacts:
+        paths:
+            - builds/rhenag-dev-coverage
 
 build:
     # the name for the entire job
     name: Transform Figma design tokens for specific platforms
     stage: build
-    only:
-        - triggers
+    #only:
+        #- triggers
     extends: .npmPrepare
     script:
         - cat $TRIGGER_PAYLOAD
         - npm run clean # clear previous build
         - npm run transform-figma-tokens
+        - echo 'Trying to create "tokens" directory...'
+        - mkdir -p tokens
+        - echo 'create json from request body'
+        - #create json file out of
+
 
 
 

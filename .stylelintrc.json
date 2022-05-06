@@ -12,7 +12,8 @@
 				"stylelint-no-unsupported-browser-features",
 				"stylelint-no-browser-hacks"
 			],
-			"cache-location": "./.dev-cache/stylelint",
+			"cache": true,
+			"cache-location": "./cache/.dev-cache/stylelint",
 			"rules": {
 				"double-slash-comment-inline": [
 					"always",

@@ -86,7 +86,8 @@
 			"outputs": ["coverage/apps/designsystem"],
 			"options": {
 				"jestConfig": "apps/designsystem/jest.config.js",
-				"passWithNoTests": true
+				"passWithNoTests": true,
+				"codeCoverage": true
 			}
 		},
 		"stylelint": {

@@ -1,0 +1,17 @@
+{
+	"$schema": "https://on.cypress.io/cypress.schema.json",
+	"allowJs": true,
+	"forceConsistentCasingInFileNames": true,
+	"strict": true,
+	"noImplicitOverride": true,
+	"sourceMap": false,
+	"noPropertyAccessFromIndexSignature": true,
+	"noImplicitReturns": true,
+	"noFallthroughCasesInSwitch": true,
+	"requestTimeout": 20000,
+	"defaultCommandTimeout": 10000,
+	"numTestsKeptInMemory": 25,
+	"viewportWidth": 1280,
+	"viewportHeight": 800,
+	"video": false
+}

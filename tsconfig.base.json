@@ -2,21 +2,25 @@
 	"compileOnSave": false,
 	"compilerOptions": {
 		"rootDir": ".",
+		"esModuleInterop": true,
 		"sourceMap": true,
 		"declaration": false,
 		"moduleResolution": "node",
+		"downlevelIteration": true,
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"importHelpers": true,
-		"target": "es2015",
+		"target": "es5",
 		"module": "esnext",
-		"lib": ["es2017", "dom"],
+		"lib": ["es2018", "dom"],
 		"skipLibCheck": true,
-		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
 			"@rhenag/components": ["libs/components/src/index.ts"],
-			"@rhenag/elements": ["libs/elements/src/index.ts"]
+			"@rhenag/elements": ["libs/elements/src/index.ts"],
+			"@rhenag/shared/cypress-commands": [
+				"libs/shared/cypress-commands/src/index.ts"
+			]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

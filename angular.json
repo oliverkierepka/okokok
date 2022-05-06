@@ -4,6 +4,7 @@
 		"components": "libs/components",
 		"designsystem": "apps/designsystem",
 		"designsystem-e2e": "apps/designsystem-e2e",
-		"elements": "libs/elements"
+		"elements": "libs/elements",
+		"shared-cypress-commands": "libs/shared/cypress-commands"
 	}
 }

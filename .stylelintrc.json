@@ -8,10 +8,7 @@
 				"stylelint-config-rational-order",
 				"stylelint-no-unused-selectors"
 			],
-			"plugins": [
-				"stylelint-no-unsupported-browser-features",
-				"stylelint-no-browser-hacks"
-			],
+			"plugins": ["stylelint-no-unsupported-browser-features"],
 			"cache": true,
 			"cache-location": "./cache/.dev-cache/stylelint",
 			"rules": {

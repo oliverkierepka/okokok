@@ -13,10 +13,7 @@
 			"devDependencies": "*"
 		},
 		".eslintrc.json": "*",
-		".stylelintrc.json": "*",
-		"scripts": {
-			"check:*": "*"
-		}
+		".stylelintrc.json": "*"
 	},
 	"tasksRunnerOptions": {
 		"default": {

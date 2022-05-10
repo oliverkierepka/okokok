@@ -5,7 +5,6 @@
 			"extends": [
 				"stylelint-config-standard-scss",
 				"stylelint-config-prettier-scss",
-				"stylelint-config-rational-order",
 				"stylelint-no-unused-selectors"
 			],
 			"plugins": ["stylelint-no-unsupported-browser-features"],
@@ -19,20 +18,13 @@
 				"indentation": "tab",
 				"at-rule-no-unknown": null,
 				"scss/at-rule-no-unknown": true,
-				"plugin/rational-order": [
-					true,
-					{
-						"empty-line-between-groups": true
-					}
-				],
 				"plugin/no-unsupported-browser-features": [
 					true,
 					{
 						"severity": "warning"
 					}
 				],
-				"plugin/no-unused-selectors": true,
-				"plugin/no-browser-hacks": true
+				"plugin/no-unused-selectors": true
 			}
 		}
 	]

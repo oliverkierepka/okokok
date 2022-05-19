@@ -1,0 +1,41 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+.footer-bar {
+	background-color: $color-background-2;
+	box-shadow: 0 0 3px 3px $color-box-shadow;
+	display: flex;
+	flex: 0 0 auto;
+	justify-content: space-between;
+	padding: ($margin-content-area - $margin-button) ($margin-content-indent + $margin-content-area + 1rem);
+	z-index: 1;
+	position: relative;
+	align-items: stretch;
+
+	.left {
+		display: flex;
+		align-items: center;
+		flex-flow: row wrap;
+		justify-content: center;
+		text-align: center;
+		flex: 1 1 auto;
+
+		button,
+		strong {
+			margin: math.div($margin-button, 2) 0 math.div($margin-button, 2) $margin-button;
+		}
+
+		strong {
+			padding: 7px 0;
+		}
+	}
+
+	.right {
+		text-align: right;
+		flex: 1 1 auto;
+
+		button {
+			margin: math.div($margin-button, 2) 0 math.div($margin-button, 2) $margin-button;
+		}
+	}
+}

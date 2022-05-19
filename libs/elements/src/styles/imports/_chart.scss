@@ -1,0 +1,24 @@
+@import '~src/scss/variables';
+
+.chart-tooltip {
+	padding-right: (0.5 * $margin-contents);
+
+	.title {
+		font-weight: bold;
+	}
+	.total {
+		font-weight: bold;
+	}
+
+	.series {
+		.count {
+			min-width: (3 * $margin-contents);
+			padding-right: (0.5 * $margin-contents);
+			text-align: right;
+		}
+	}
+}
+
+.pie-tooltip-identation {
+	padding-left: (1.1 * $margin-contents);
+}

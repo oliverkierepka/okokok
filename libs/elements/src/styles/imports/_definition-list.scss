@@ -1,0 +1,226 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+.definition-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -(math.div($margin-grid, 2));
+	margin-right: -(math.div($margin-grid, 2));
+	// width: 100%;
+
+	.break-wrap {
+		flex-basis: 100%;
+	}
+
+	.item {
+		display: flex;
+		margin: ($margin-grid * 0.5) 0;
+		padding: 0 ($margin-grid * 0.5);
+		width: 33.33%;
+
+		> strong,
+		> span {
+			width: 50%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			min-height: 19px;
+
+			.warning {
+				color: $color-error;
+			}
+			.app-filter-dropdown .button {
+				margin-bottom: 0;
+			}
+			span {
+				width: auto;
+			}
+			&.change {
+				text-overflow: unset;
+			}
+		}
+		> .label {
+			color: $color-active;
+		}
+		@media screen and (max-width: 1200px) {
+			width: 50%;
+		}
+	}
+	&.full-width {
+		.item {
+			width: 100%;
+
+			@media screen and (max-width: 1200px) {
+				width: 100%;
+			}
+		}
+	}
+	&.small-label {
+		> strong {
+			width: 30%;
+		}
+		> span {
+			width: 70%;
+		}
+	}
+	&.center-vertical {
+		.item {
+			align-items: center;
+			display: flex;
+
+			.filter-dropdown .default-button {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.no-margin {
+		font-size: $font-size-standard;
+
+		.item {
+			margin: 0;
+		}
+	}
+	&.tab-items {
+		overflow-x: hidden;
+		margin-left: $margin-contents;
+		&.second {
+			.item {
+				flex-direction: column;
+				width: 24.6%;
+				border-right: 1px solid #ccc;
+				&:last-of-type {
+					border: none;
+				}
+			}
+		}
+		&.first {
+			.item {
+				width: 21.33%;
+			}
+		}
+		.item {
+			flex-direction: column;
+			width: 16.6%;
+
+			&.hide {
+				display: none;
+			}
+			> span {
+				word-wrap: break-word;
+			}
+			> span,
+			> strong {
+				width: 90%;
+			}
+			> strong {
+				margin: (math.div($margin-contents, 2)) 0;
+			}
+
+			@media screen and (max-width: 1200px) {
+				width: 33.33%;
+			}
+		}
+	}
+
+	@mixin multiline-column($columns) {
+		.item {
+			flex-direction: column;
+			width: math.div(100%, $columns);
+
+			> span,
+			> strong {
+				width: 90%;
+			}
+		}
+	}
+
+	&.cols-1-multiline {
+		@include multiline-column(1);
+	}
+	&.cols-2-multiline {
+		@include multiline-column(2);
+	}
+	&.cols-3-multiline {
+		@include multiline-column(3);
+	}
+	&.cols-5-multiline {
+		.item {
+			flex-direction: column;
+			width: 20%;
+
+			> span,
+			> strong {
+				width: 90%;
+			}
+		}
+	}
+	&.double-value {
+		.item {
+			> strong,
+			> span {
+				width: math.div(100%, 3);
+			}
+		}
+	}
+	&.stretch {
+		.item {
+			justify-content: space-between;
+
+			> strong,
+			> span {
+				width: auto;
+			}
+		}
+	}
+	.item > span.change {
+		width: ($margin-contents * 2);
+		padding: 0 math.div($margin-contents, 4);
+	}
+}
+
+.event-list {
+	ul {
+		border-left: 1px solid $color-standard-2;
+		list-style: none;
+		margin-left: $margin-contents;
+		padding-left: $margin-contents * 2;
+
+		li {
+			position: relative;
+
+			> .mat-icon,
+			> .circle-icon {
+				background-color: white;
+				left: $margin-contents * -2.7;
+				position: absolute;
+			}
+			.header {
+				color: $color-active;
+				font-weight: bold;
+				margin-bottom: 0;
+			}
+			.footer {
+				color: $color-standard;
+			}
+		}
+	}
+	&.no-line {
+		ul {
+			border-left: none;
+			li .content {
+				.header {
+					color: $color-standard;
+					&.action {
+						color: $color-active;
+						mat-icon {
+							font-size: 16px;
+						}
+					}
+				}
+				.text {
+					color: $color-standard;
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,290 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+form {
+	width: 100%;
+
+	&.full-height {
+		display: flex;
+		flex-flow: column;
+		flex: 1 1 auto;
+	}
+	h3 {
+		color: $color-active;
+	}
+	hr {
+		border-color: $color-standard-3;
+		border-top-width: 5px;
+		margin-left: -$margin-content-area;
+		margin-right: -$margin-content-area;
+	}
+	.fieldset-group {
+		display: flex;
+		flex-flow: column;
+		flex: 1 1 auto;
+		margin-bottom: $margin-contents;
+
+		.headline {
+			color: $color-active;
+			font-size: $font-size-standard;
+			font-weight: 500;
+			margin-bottom: ($margin-contents * 0.5);
+		}
+		.fieldsets {
+			background-color: $color-background;
+			border-radius: 4px;
+			flex: 1 1 auto;
+			padding: $margin-contents;
+
+			input::placeholder {
+				color: $color-standard-2;
+			}
+		}
+	}
+	.mat-form-field-appearance-legacy .mat-form-field-label {
+		color: $color-standard-2;
+	}
+	&.dynamic-form {
+		h2,
+		h3,
+		h4 {
+			margin-bottom: $margin-contents;
+			margin-top: $margin-contents;
+		}
+		h2 {
+			font-size: $font-size-menu;
+		}
+	}
+}
+
+.mat-form-field-appearance-legacy {
+	.mat-form-field-subscript-wrapper {
+		top: 40px;
+	}
+}
+
+legend {
+	&.required {
+		&::before {
+			content: '* ';
+			color: $color-highlight;
+		}
+
+		&::after {
+			content: ' erforderlich';
+			color: $color-highlight;
+		}
+	}
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0 0 ($margin-contents * 1.5);
+
+	&.narrow {
+		padding-bottom: $margin-contents;
+	}
+	&.indent {
+		padding-left: ($margin-contents * 1.5);
+	}
+	legend {
+		font-weight: 500;
+		margin-bottom: ($margin-contents * 0.25);
+		color: $color-active;
+	}
+
+	legend + span {
+		display: block;
+	}
+	.mat-form-field-wrapper {
+		padding-bottom: 0 !important;
+
+		.mat-form-field-underline {
+			bottom: 0 !important;
+		}
+	}
+	.mat-form-field {
+		.mat-form-field-wrapper {
+			.mat-form-field-flex {
+				.mat-form-field-infix {
+					width: auto;
+				}
+			}
+		}
+		&.input-amount {
+			.mat-form-field-infix:after {
+				bottom: 0.35rem;
+				content: '€';
+				display: block;
+				height: 1rem;
+				position: absolute;
+				right: 0;
+				width: 0.75rem;
+			}
+			input {
+				padding-right: 1rem;
+				text-align: right;
+			}
+		}
+		&.input-kwh {
+			.mat-form-field-infix:after {
+				bottom: 0.35rem;
+				content: 'kWh';
+				display: block;
+				height: 1rem;
+				position: absolute;
+				right: 0;
+				width: 2rem;
+			}
+			input {
+				padding-right: 2.25rem;
+				text-align: right;
+			}
+		}
+	}
+
+	&[disabled] {
+		legend {
+			color: $color-standard-2 !important;
+		}
+		.mat-form-field {
+			&.input-amount {
+				.mat-form-field-infix:after {
+					content: '€';
+					color: $color-standard-2;
+					display: none;
+				}
+				.mat-input-element {
+					color: $color-standard-2;
+					display: none;
+				}
+				.mat-form-field-underline {
+					background-color: $color-standard-2;
+				}
+			}
+			&.input-kwh {
+				.mat-form-field-infix:after {
+					content: 'kWh';
+					color: $color-standard-2;
+					display: none;
+				}
+				.mat-input-element {
+					color: $color-standard-2;
+					display: none;
+				}
+				.mat-form-field-underline {
+					background-color: $color-standard-2;
+				}
+			}
+		}
+	}
+}
+
+.mat-form-field {
+	width: 100%;
+}
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+
+	&.buttons-separated {
+		border-top: 1px solid $color-standard-2;
+		margin-left: -$margin-contents;
+		margin-right: -$margin-contents;
+		padding: $margin-contents $margin-contents 0;
+	}
+	button {
+		margin-left: $margin-button;
+	}
+}
+
+.mat-radio-group {
+	display: inline-flex;
+	flex-direction: column;
+
+	.mat-radio-button {
+		padding: 0.25rem 0rem;
+
+		&.mat-radio-checked {
+			.mat-radio-label-content {
+				span {
+					color: $color-active;
+				}
+			}
+		}
+	}
+}
+
+.mat-stroked-button {
+	background-color: $color-background-2;
+}
+
+.mat-slide-toggle {
+	margin-right: $margin-button;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+mat-form-field {
+	&.ng-invalid,
+	&.ng-pristine.ng-invalid {
+		color: $color-error;
+
+		.mat-form-field-ripple {
+			color: $color-error;
+		}
+
+		&.mat-form-field {
+			&.mat-focused {
+				.mat-form-field-ripple {
+					background-color: $color-error;
+				}
+			}
+		}
+	}
+}
+
+.mat-autocomplete-panel {
+	.mat-option {
+		border-left: 3px solid transparent;
+
+		.mat-option-text {
+			display: flex;
+
+			span.value {
+				color: $color-active;
+				display: block;
+				min-width: 8rem;
+				margin-right: (math.div($margin-contents, 2));
+			}
+			span.description {
+				color: $color-standard;
+			}
+		}
+		&.mat-active,
+		&:hover:not(.mat-option-disabled),
+		&:focus:not(.mat-option-disabled) {
+			background-color: lighten($color-highlight, 35); // var(--highlightL35, lighten($color-highlight, 35));
+			border-left-color: $color-highlight; // var(--highlight, $color-highlight);
+		}
+	}
+}
+
+/* Used to hide a form lable but still be able to be read by screenreader */
+.visually-hidden {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}

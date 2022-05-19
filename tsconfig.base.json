@@ -17,10 +17,12 @@
 		"baseUrl": ".",
 		"paths": {
 			"@rhenag/components": ["libs/components/src/index.ts"],
+			"@rhenag/designtokens": ["libs/designtokens/src/index.ts"],
 			"@rhenag/elements": ["libs/elements/src/index.ts"],
 			"@rhenag/shared/cypress-commands": [
 				"libs/shared/cypress-commands/src/index.ts"
-			]
+			],
+			"@rhenag/themes/lima": ["libs/themes/lima/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

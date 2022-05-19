@@ -1,0 +1,165 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+.mat-icon {
+	&.icon-person {
+		color: $color-active;
+	}
+	&.icon-energy {
+		color: $color-energy;
+	}
+	&.icon-gas {
+		color: $color-gas;
+	}
+	&.icon-sewage {
+		color: $color-sewage;
+	}
+	&.icon-heat {
+		color: $color-heat;
+	}
+	&.icon-emobility {
+		color: $color-emobility;
+	}
+	&.icon-water {
+		color: $color-water;
+	}
+
+	&.icon-other {
+		color: $color-other-eart;
+	}
+
+	&.icon-action {
+		color: $color-action;
+	}
+	&.icon-standard {
+		color: $color-standard;
+	}
+	&.icon-disabled {
+		color: $color-standard-2;
+	}
+	&.icon-warning {
+		color: $color-error;
+	}
+	&.icon-success {
+		color: $color-success;
+	}
+	&.icon-date-difference-now {
+		color: #ad2124;
+	}
+	&.icon-date-difference-soon {
+		color: #ea7322;
+	}
+	&.icon-date-difference-future {
+		color: #f6d5ac;
+	}
+	&.icon-status-gezahlt {
+		color: #80abdc;
+	}
+	&.icon-status-ungeprueft {
+		color: #ff8d2f;
+	}
+	&.icon-status-geprueft {
+		color: #3fbd96;
+	}
+	&.icon-status-abgelehnt {
+		color: #a61818;
+	}
+	&.icon-status-wiedervorlage {
+		color: #f7db56;
+	}
+	&.icon-contrast {
+		color: $color-contrast;
+	}
+	&.icon-status-aktiv {
+		color: $color-aktiver-status;
+	}
+	&.icon-transaktionsstatus-warnung {
+		color: $color-highlight;
+	}
+}
+
+.circle-icon {
+	border-radius: 100%;
+	border: 1px solid $color-active;
+	display: inline-block;
+	font-size: 14px;
+	height: 21px;
+	text-align: center;
+	vertical-align: middle;
+	width: 21px;
+	margin-right: (math.div($margin-contents, 2));
+
+	.mat-icon {
+		font-size: 16px;
+		height: 16px;
+		margin-right: (math.div($margin-contents, 2));
+		width: 16px;
+		margin-bottom: 2px;
+		vertical-align: middle;
+	}
+}
+
+.with-icon {
+	display: inline-block;
+	align-items: center;
+
+	&.inline-icon {
+		display: inline-flex;
+	}
+
+	&.large-icon {
+		.mat-icon {
+			margin-top: 2px;
+			margin-right: ($margin-contents);
+		}
+	}
+
+	&.icon-right {
+		.mat-icon {
+			margin-left: (math.div($margin-contents, 2));
+			margin-right: 0;
+		}
+	}
+	> .label {
+		overflow: hidden;
+		word-wrap: break-word;
+	}
+
+	&:not(.large-icon) {
+		.mat-icon {
+			font-size: 16px;
+			height: 16px;
+			margin-right: (math.div($margin-contents, 2));
+			width: 16px;
+			margin-bottom: 2px;
+			vertical-align: middle;
+			position: relative;
+		}
+		.icon-other {
+			font-weight: bold;
+			top: -2px;
+			margin-left: 0.1rem;
+		}
+	}
+}
+
+.flipped {
+	transform: scaleX(-1);
+}
+.rotate-45 {
+	transform: rotate(45deg);
+}
+@keyframes animate-rotate-keyframes {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+.animate-rotate {
+	animation-duration: 1000ms;
+	animation-iteration-count: infinite;
+	animation-name: animate-rotate-keyframes;
+	animation-timing-function: linear;
+}

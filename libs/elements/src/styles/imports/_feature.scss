@@ -1,0 +1,31 @@
+@import '~src/scss/variables';
+
+.feature {
+	display: flex;
+	flex: 1 1 auto;
+	flex-direction: column;
+	height: calc(100vh - 48px); //Viewport height minus headerbar height
+	padding: 1.8rem $margin-content-indent;
+
+	> .header {
+		padding: 0 $margin-content-area;
+
+		h2 {
+			color: $color-active;
+			font-size: $font-size-headline;
+			font-weight: normal;
+			margin-bottom: $margin-contents;
+		}
+	}
+}
+
+.with-footer-bar {
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	height: 100%;
+
+	.feature {
+		height: auto;
+	}
+}

@@ -1,0 +1,73 @@
+// Account specific colors (tbd how to handle different colors for different customers)
+$color-active: #140043;
+$color-hover: #1e3778;
+$color-action: #32559b;
+$color-highlight: #ff8d2f;
+
+// Colors
+$color-dark: #4a4a4a;
+$color-standard: #666;
+$color-standard-2: #ccc;
+$color-standard-3: #eee;
+$color-standard-4: #eaeaea;
+$color-contrast: #fff;
+$color-secondary: #cccccc;
+
+// States
+$color-inactive: #b1b1b1;
+$color-disabled: #666;
+
+$color-background: #f2f2f2;
+$color-background-2: #fff;
+
+$color-error: #d7292d;
+$color-success: #3fbd96;
+$color-warning: #f4b921;
+
+$color-energy: #f4b921;
+$color-gas: #19775c;
+$color-sewage: #19235c;
+$color-heat: #a34242;
+$color-emobility: #f4b921;
+$color-water: #2d37bd;
+$color-other-eart: #32559b;
+
+$color-aktiver-status: #4ef904;
+
+$color-amount-positive: #008800;
+$color-amount-negative: #ff0000;
+
+// Different global spacings
+
+$size-xxxs: 4px;
+$size-xxs: 8px;
+$size-xs: 12px;
+$size-s: 16px;
+$size-m: 24px;
+$size-l: 32px;
+$size-xl: 48px;
+$size-xxl: 64px;
+$size-xxxl: 96px;
+$size-xxxxl: 160px;
+
+// Font styling
+$font-family: Roboto, Arial, Helvetica, sans-serif;
+
+$font-size-headline: 30px;
+$font-size-subheadline: 20px;
+$font-size-standard: 14px;
+$font-size-menu: 16px;
+$font-size-table: 14px;
+$font-size-breadcrumb: 14px;
+$font-size-hint: 12px;
+
+// General styling
+$color-box-shadow: rgba(128, 128, 128, 0.25);
+$text-shadow: rgba(128, 128, 128, 0.25);
+
+// Margins
+$margin-content-indent: 3rem;
+$margin-content-area: 1rem;
+$margin-contents: 1rem;
+$margin-grid: 1rem;
+$margin-button: 0.5rem;

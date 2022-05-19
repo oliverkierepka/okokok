@@ -1,0 +1,15 @@
+{
+	"name": "@rhenag/elements",
+	"version": "0.0.1",
+	"peerDependencies": {
+		"@angular/common": "^13.2.0",
+		"@angular/core": "^13.2.0"
+	},
+	"dependencies": {
+		"@angular/animations": "^13.3.6",
+		"@angular/cdk": "^13.3.6",
+		"@angular/flex-layout": "^13.0.0-beta.38",
+		"@angular/material": "^13.3.6",
+		"tslib": "^2.3.0"
+	}
+}

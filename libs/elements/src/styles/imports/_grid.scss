@@ -1,0 +1,118 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+.space-between {
+	display: flex;
+	justify-content: space-between;
+}
+.flex-expand {
+	flex: 1 1 auto;
+}
+.flex-fixed {
+	flex: 0 0 auto;
+}
+
+.row-container {
+	width: 100%;
+
+	&.row-full-height {
+		height: 100%;
+
+		.row {
+			height: 100%;
+		}
+	}
+}
+.row {
+	display: flex;
+	margin-left: -(math.div($margin-grid, 2));
+	margin-right: -(math.div($margin-grid, 2));
+
+	&.row-margin-bottom {
+		margin-bottom: $margin-contents;
+	}
+	&.row-margin {
+		margin: $margin-contents;
+	}
+	&.row-center {
+		justify-content: center;
+	}
+	&.row-end {
+		justify-content: flex-end;
+	}
+	&.space-between {
+		justify-content: space-between;
+	}
+	&.row-wrap {
+		flex-wrap: wrap;
+	}
+	.col {
+		align-items: stretch;
+		display: flex;
+		flex-flow: column;
+		flex: 1 1 auto;
+		// margin: 0 0 $margin-grid;
+		padding: 0 math.div($margin-grid, 2);
+
+		&.col-1 {
+			flex: 0 0 auto;
+			width: math.div(100%, 12);
+		}
+		&.col-2 {
+			flex: 0 0 auto;
+			width: math.div(100%, 6);
+		}
+		&.col-3 {
+			flex: 0 0 auto;
+			width: math.div(100%, 4);
+		}
+		&.col-4 {
+			flex: 0 0 auto;
+			width: math.div(100%, 3);
+		}
+		&.col-6 {
+			flex: 0 0 auto;
+			width: math.div(100%, 2);
+		}
+		&.col-8 {
+			flex: 0 0 auto;
+			width: (math.div(100%, 3) * 2);
+		}
+		&.col-10 {
+			flex: 0 0 auto;
+			width: (math.div(100%, 6) * 5);
+		}
+		&.col-12 {
+			flex: 0 0 auto;
+			width: 100%;
+		}
+		&.col-full {
+			flex: 1 1 auto;
+		}
+		&.col-row {
+			flex-flow: row;
+		}
+		&.col-center {
+			justify-content: center;
+		}
+		&.col-center-vertical {
+			justify-content: center;
+		}
+		&.col-end-vertical {
+			justify-content: flex-end;
+		}
+		&.col-border-left {
+			border-left: 1px solid $color-standard-2;
+		}
+		&.col-border-right {
+			border-right: 1px solid $color-standard-2;
+		}
+	}
+	.col-demo {
+		background-color: $color-background;
+		border: 1px solid #ccc;
+		margin-bottom: $margin-contents;
+		padding: (math.div($margin-contents, 2));
+		width: 100%;
+	}
+}

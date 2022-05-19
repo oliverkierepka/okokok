@@ -1,0 +1,46 @@
+@use '~@angular/material' as mat;
+@import '~src/scss/variables';
+@import '~@angular/material/theming';
+
+@include mat.core();
+
+$rhenag-color-base: $color-active;
+$rhenag-palette: (
+	50: $color-active,
+	100: darken($color-active, 5),
+	200: darken($color-active, 10),
+	300: darken($color-active, 15),
+	400: darken($color-active, 20),
+	500: $color-action,
+	600: $rhenag-color-base,
+	700: lighten($rhenag-color-base, 25),
+	800: lighten($rhenag-color-base, 30),
+	900: lighten($rhenag-color-base, 35),
+	A100: darken($color-action, 20),
+	A200: darken($color-action, 10),
+	A400: $color-action,
+	A700: lighten($color-action, 10),
+	contrast: (
+		50: $color-standard,
+		100: $color-standard,
+		200: $color-standard,
+		300: $color-standard,
+		400: $color-standard,
+		500: $color-contrast,
+		600: $color-contrast,
+		700: $color-contrast,
+		800: $color-contrast,
+		900: $color-standard,
+		A100: $color-contrast,
+		A200: $color-standard,
+		A400: $color-standard,
+		A700: $color-standard,
+	),
+);
+
+$rhenag-primary: mat.define-palette($rhenag-palette);
+$rhenag-accent: mat.define-palette($rhenag-palette);
+$rhenag-warn: mat.define-palette(mat.$red-palette);
+$rhenag-theme: mat.define-light-theme($rhenag-primary, $rhenag-accent, $rhenag-warn);
+
+@include mat.all-component-themes($rhenag-theme);

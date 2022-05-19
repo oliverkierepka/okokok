@@ -1,0 +1,29 @@
+@import 'src/scss/variables.scss';
+
+.event-list {
+	max-height: 22rem;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	::ng-deep .definition-list {
+		.item {
+			strong {
+				font-weight: normal;
+			}
+		}
+	}
+	.text {
+		word-wrap: break-word;
+	}
+	.text-red {
+		color: red;
+	}
+	.text-italic {
+		font-style: italic;
+	}
+	.footer {
+		span.with-icon {
+			display: inline-block;
+		}
+	}
+}

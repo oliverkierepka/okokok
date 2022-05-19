@@ -1,0 +1,131 @@
+@use 'sass:math';
+@import '~src/styles/variables';
+
+$roboto-font-path: '~roboto-fontface/fonts';
+$color-highlightL35: lighten($color-highlight, 35);
+:root {
+	--highlight: #{$color-highlight};
+	--highlightL35: #{$color-highlightL35};
+}
+
+@import 'imports/normalize';
+// imports/theme is handled in the angular.json
+
+@import 'imports/definition-list';
+@import 'imports/dialog';
+@import 'imports/feature';
+@import 'imports/filter-dropdown';
+@import 'imports/footer-bar';
+@import 'imports/forms';
+@import 'imports/grid';
+@import 'imports/icons';
+@import 'imports/nav-bar';
+@import 'imports/progress-bar';
+@import 'imports/table';
+@import 'imports/chart';
+@import 'imports/hinweiskachel';
+@import '~roboto-fontface/css/roboto/sass/roboto-fontface-regular.scss';
+// @import "santa";
+
+// General structure
+#rhenag {
+	align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+
+	.lima-container {
+		display: flex;
+		flex-flow: column;
+		flex: 1 1 auto;
+		height: 100%;
+		width: 100%;
+	}
+	main {
+		display: flex;
+		flex: 1 1 auto;
+		overflow: hidden;
+
+		section {
+			display: flex;
+			flex-flow: column;
+			flex: 1 1 auto;
+			position: relative;
+			width: 100%;
+		}
+	}
+}
+
+.scrollable {
+	overflow-y: scroll;
+}
+
+.sticky {
+	top: 0;
+	z-index: 1;
+}
+
+span.italic,
+strong.italic {
+	font-style: italic;
+}
+span.underline,
+strong.underline {
+	text-decoration: underline;
+}
+span.linethrough,
+strong.linethrough {
+	text-decoration: line-through;
+}
+
+span.amount-negative {
+	color: $color-amount-negative;
+}
+
+span.amount-positive {
+	color: $color-amount-positive;
+}
+
+.sr-only {
+	border: 0 !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	position: absolute !important;
+	width: 1px !important;
+}
+.hidden {
+	display: none;
+}
+.invisible {
+	visibility: hidden;
+}
+
+hr {
+	border-color: $color-standard-2;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	height: 1px;
+	margin: (math.div($margin-contents, 2)) 0 $margin-contents;
+}
+
+.editable-column {
+	background-color: lighten($color-highlight, 30%);
+}
+
+.editable-cell-input-renderer {
+	height: 100%;
+	width: 100%;
+}
+
+.editable-cell-input-renderer-error {
+	border: 1px solid $color-error;
+}
+
+*:focus {
+	outline-color: $color-highlight;
+	outline-style: solid;
+	outline-width: 5px;
+}

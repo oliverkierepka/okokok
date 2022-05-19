@@ -1,0 +1,16 @@
+@import '~src/scss/variables';
+
+.filter-list {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: $margin-contents 0;
+
+	.reset-button {
+		margin-bottom: $margin-contents;
+	}
+}
+
+.shared-filter-dropdown-panel {
+	box-shadow: 0 3px 5px 0 $color-box-shadow;
+}

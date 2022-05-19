@@ -1,0 +1,128 @@
+@use 'sass:math';
+@import '~src/scss/variables';
+
+$ag-font-family: null;
+
+// $accent-color: $color-highlight; // var(--highlight, $color-highlight);
+$ag-accent-color: $color-action;
+$ag-range-selected-color-1: lighten($color-highlight, 35); // var(--highlightL35, lighten($color-highlight, 35));
+$ag-background-color: $color-background-2;
+$ag-border-color: $color-standard-2;
+$ag-focused-cell-border-color: $color-standard;
+$ag-font-size: $font-size-standard;
+$ag-foreground-color: $color-dark;
+$ag-grid-size: 6px;
+$ag-header-background-color: $color-background-2;
+$ag-header-height: $ag-grid-size * 6 + 1;
+$ag-hover-color: lighten($color-highlight, 35); // var(--highlightL35, lighten($color-highlight, 35));
+$ag-icon-color: $color-action;
+$ag-icons-path: '~ag-grid-community/src/styles/ag-theme-material/icons/';
+$ag-odd-row-background-color: lighten($color-background, 3);
+$ag-row-height: $ag-grid-size * 6 + 1;
+$ag-secondary-font-family: $font-family;
+$ag-secondary-font-size: $font-size-standard;
+$ag-secondary-foreground-color: $color-active;
+$ag-selected-color: lighten($color-action, 55);
+
+@import '~ag-grid-community/src/styles/ag-grid';
+@import '~ag-grid-community/src/styles/ag-theme-material/sass/legacy/ag-theme-material-v22-compat';
+
+.table-wrapper {
+	display: flex;
+	flex-flow: column;
+	flex: 1 1 auto;
+	height: 100%;
+
+	> .table {
+		display: flex;
+		flex-flow: column;
+		flex: 1 1 auto;
+		height: 100%;
+	}
+
+	.button-on-table {
+		display: flex;
+		justify-content: center;
+		margin-top: (math.div($margin-contents, 2));
+	}
+}
+
+.tooltip {
+	white-space: pre-line;
+}
+
+.difference-not-zero {
+	color: $color-error;
+}
+
+.text-right {
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+	margin: 0 0 $margin-contents;
+	max-width: 100%;
+	padding: 0;
+	width: 100%;
+
+	thead {
+		th {
+			vertical-align: bottom;
+		}
+	}
+	tbody {
+		th {
+			text-align: left;
+		}
+	}
+	&.simple,
+	&.simple-styled {
+		tr {
+			margin: 0;
+			padding: 0;
+		}
+		th,
+		td {
+			border-bottom: 1px solid $color-standard-2;
+			color: $color-dark;
+			overflow: hidden;
+			padding: (math.div($margin-contents, 2));
+			text-align: left;
+			text-overflow: ellipsis;
+		}
+	}
+	&.simple-styled {
+		th {
+			color: $color-active;
+		}
+		thead {
+			th {
+				border-bottom: 1px solid $color-active;
+			}
+		}
+		td {
+			border-left: 1px solid $color-standard-2;
+
+			&:first-child {
+				border-left: 0;
+			}
+		}
+		tr:nth-child(even) {
+			background-color: lighten($color-action, 57);
+		}
+	}
+}
+
+.table-circle-text {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: inherit;
+	color: $color-dark;
+	font-size: 11px;
+}

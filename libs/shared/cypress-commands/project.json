@@ -29,5 +29,5 @@
 			}
 		}
 	},
-	"tags": []
+	"tags": ["type:util", "scope:testing"]
 }

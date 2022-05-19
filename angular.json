@@ -4,7 +4,50 @@
 		"components": "libs/components",
 		"designsystem": "apps/designsystem",
 		"designsystem-e2e": "apps/designsystem-e2e",
-		"elements": "libs/elements",
-		"shared-cypress-commands": "libs/shared/cypress-commands"
+		"designtokens": "libs/designtokens",
+		"elements": {
+			"projectType": "library",
+			"root": "libs/elements",
+			"sourceRoot": "libs/elements/src",
+			"prefix": "rh",
+			"targets": {
+				"build": {
+					"executor": "@nrwl/angular:package",
+					"outputs": ["dist/libs/elements"],
+					"options": {
+						"project": "libs/elements/ng-package.json"
+					},
+					"configurations": {
+						"production": {
+							"tsConfig": "libs/elements/tsconfig.lib.prod.json"
+						},
+						"development": {
+							"tsConfig": "libs/elements/tsconfig.lib.json"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"test": {
+					"executor": "@nrwl/jest:jest",
+					"outputs": ["coverage/libs/elements"],
+					"options": {
+						"jestConfig": "libs/elements/jest.config.js",
+						"passWithNoTests": true
+					}
+				},
+				"lint": {
+					"executor": "@nrwl/linter:eslint",
+					"options": {
+						"lintFilePatterns": [
+							"libs/elements/src/**/*.ts",
+							"libs/elements/src/**/*.html"
+						]
+					}
+				}
+			},
+			"tags": []
+		},
+		"shared-cypress-commands": "libs/shared/cypress-commands",
+		"themes-lima": "libs/themes/lima"
 	}
 }

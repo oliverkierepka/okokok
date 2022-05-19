@@ -1,0 +1,32 @@
+{
+	"root": "libs/designtokens",
+	"sourceRoot": "libs/designtokens/src",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/designtokens",
+				"main": "libs/designtokens/src/index.ts",
+				"tsConfig": "libs/designtokens/tsconfig.lib.json",
+				"assets": ["libs/designtokens/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/designtokens/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/designtokens"],
+			"options": {
+				"jestConfig": "libs/designtokens/jest.config.js",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": ["type:ui", "scope:tokens"]
+}

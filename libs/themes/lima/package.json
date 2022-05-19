@@ -1,0 +1,8 @@
+{
+	"name": "@rhenag/themes/lima",
+	"version": "0.0.1",
+	"type": "commonjs",
+	"dependencies": {
+		"@angular/material": "^13.3.6"
+	}
+}

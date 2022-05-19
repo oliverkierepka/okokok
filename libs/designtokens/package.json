@@ -1,16 +1,17 @@
 {
 	"name": "@rhenag/designtokens",
 	"version": "0.0.1",
-	"description": "Rhenag design tokens for @rhenag/elements based on angular material",
+	"type": "commonjs",
+	"description": "Rhenag design tokens",
 	"files": [
 		"build",
 		"properties"
 	],
 	"scripts": {
-		"build": "node ./build.js",
-		"build:watch": "npm run build && chokidar  \"tokens/**/*.json\" --command \"npm run build\"",
-		"clean": "rm -rf build",
-		"transform-figma-tokens": "node ./transform-figma-tokens.js",
+		"build": "ts-node ./src/lib/build.ts",
+		"build:watch": "npm run build && chokidar  \"src/lib/tokens/**/*.json\" --command \"npm run build\"",
+		"clean": "rm -rf src/lib/build",
+		"transform-figma-tokens": "ts-node ./src/lib/transform-figma-tokens.ts",
 		"test": "jest tests --coverage=false"
 	},
 	"author": "Oliver Kierepka <oliver.kierepka@rhenag.de>",
@@ -20,10 +21,13 @@
 	},
 	"devDependencies": {
 		"@types/jest": "^27.0.3",
+		"@types/node": "^17.0.32",
 		"chokidar-cli": "^3.0.0",
 		"jest": "^27.0.6",
 		"tinycolor2": "^1.4.2",
-		"ts-jest": "^27.0.3"
+		"ts-jest": "^27.0.3",
+		"ts-node": "^10.7.0",
+		"ts-node-dev": "^1.1.8"
 	},
 	"repository": {
 		"type": "git",

@@ -3,9 +3,10 @@ default:
     image: image-registry.openshift-image-registry.svc:5000/openshift/nodejs:14-ubi8
 
 stages:
+    - prepare
+    - verify
     - build
     - analyze
-    - verify
 
 .npmPrepare:
     before_script:
@@ -17,6 +18,14 @@ cache: &global_cache
         - node_modules/
         - cache/Cypress/
         - .sonar/cache/
+
+prepare_npm:
+    interruptible: true
+    stage: prepare
+    extends: .npmPrepare
+    script:
+        - node -v
+        - npm -v
 
 codeanalysis:
     interruptible: true
@@ -88,7 +97,6 @@ build:
     # the name for the entire job
     stage: build
     #only:
-    #- triggers
     extends: .npmPrepare
     script:
         - cat $TRIGGER_PAYLOAD
@@ -97,7 +105,7 @@ build:
         - echo 'Trying to create "tokens" directory...'
         - mkdir -p tokens
         - echo 'create json from request body'
-        -  #create json file out of
+        #- create json file out of
 
 buildFigmaTokens:
     interruptible: true

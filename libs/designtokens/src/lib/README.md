@@ -1,6 +1,6 @@
 # Design Tokens
 
-This is the home of rhenag design tokens.
+This is the home of okokok design tokens.
 It uses style-dictionary to transform platform independent designtoken.json files to generate platform specific output formats (like scss, css, plist, xml, ...). The configuration is found in config.js
 
 ## Design Token Transformer

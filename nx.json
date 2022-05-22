@@ -1,31 +1,17 @@
 {
-	"npmScope": "rhenag",
-	"affected": {
-		"defaultBase": "main"
-	},
-	"cli": {
-		"defaultCollection": "@nrwl/angular",
-		"packageManager": "npm"
-	},
-	"implicitDependencies": {
-		"package.json": {
-			"dependencies": "*",
-			"devDependencies": "*"
-		},
-		".eslintrc.json": "*",
-		".stylelintrc.json": "*"
-	},
+	"npmScope": "okokok",
 	"tasksRunnerOptions": {
 		"default": {
-			"runner": "@nrwl/workspace/tasks-runners/default",
+			"runner": "@nrwl/nx-cloud",
 			"options": {
 				"cacheableOperations": [
 					"build",
-					"lint",
 					"test",
-					"e2e",
-					"stylelint"
-				]
+					"lint",
+					"package",
+					"prepare"
+				],
+				"accessToken": "NmUzY2I1MjUtY2Q0MS00NDdhLWFiMzgtYWEzMTNlMDI5ZDI4fHJlYWQtd3JpdGU="
 			}
 		}
 	},
@@ -35,24 +21,26 @@
 				"target": "build",
 				"projects": "dependencies"
 			}
+		],
+		"prepare": [
+			{
+				"target": "prepare",
+				"projects": "dependencies"
+			}
+		],
+		"package": [
+			{
+				"target": "package",
+				"projects": "dependencies"
+			}
 		]
 	},
-	"generators": {
-		"@nrwl/angular:application": {
-			"style": "scss",
-			"linter": "eslint",
-			"unitTestRunner": "jest",
-			"e2eTestRunner": "cypress"
-		},
-		"@nrwl/angular:library": {
-			"linter": "eslint",
-			"unitTestRunner": "jest",
-			"addModuleSpec": true,
-			"publishable": true,
-			"prefix": "rh"
-		},
-		"@nrwl/angular:component": {
-			"style": "scss"
+	"affected": {
+		"defaultBase": "main"
+	},
+	"pluginsConfig": {
+		"@nrwl/js": {
+			"analyzeSourceFiles": false
 		}
 	},
 	"defaultProject": "designsystem"

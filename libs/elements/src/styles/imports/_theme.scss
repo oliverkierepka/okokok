@@ -4,18 +4,18 @@
 
 @include mat.core();
 
-$rhenag-color-base: $color-active;
-$rhenag-palette: (
+$okokok-color-base: $color-active;
+$okokok-palette: (
 	50: $color-active,
 	100: darken($color-active, 5),
 	200: darken($color-active, 10),
 	300: darken($color-active, 15),
 	400: darken($color-active, 20),
 	500: $color-action,
-	600: $rhenag-color-base,
-	700: lighten($rhenag-color-base, 25),
-	800: lighten($rhenag-color-base, 30),
-	900: lighten($rhenag-color-base, 35),
+	600: $okokok-color-base,
+	700: lighten($okokok-color-base, 25),
+	800: lighten($okokok-color-base, 30),
+	900: lighten($okokok-color-base, 35),
 	A100: darken($color-action, 20),
 	A200: darken($color-action, 10),
 	A400: $color-action,
@@ -38,9 +38,9 @@ $rhenag-palette: (
 	),
 );
 
-$rhenag-primary: mat.define-palette($rhenag-palette);
-$rhenag-accent: mat.define-palette($rhenag-palette);
-$rhenag-warn: mat.define-palette(mat.$red-palette);
-$rhenag-theme: mat.define-light-theme($rhenag-primary, $rhenag-accent, $rhenag-warn);
+$okokok-primary: mat.define-palette($okokok-palette);
+$okokok-accent: mat.define-palette($okokok-palette);
+$okokok-warn: mat.define-palette(mat.$red-palette);
+$okokok-theme: mat.define-light-theme($okokok-primary, $okokok-accent, $okokok-warn);
 
-@include mat.all-component-themes($rhenag-theme);
+@include mat.all-component-themes($okokok-theme);

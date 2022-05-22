@@ -10,19 +10,19 @@
 		"emitDecoratorMetadata": true,
 		"experimentalDecorators": true,
 		"importHelpers": true,
-		"target": "es5",
-		"module": "esnext",
-		"lib": ["es2018", "dom"],
+		"target": "es2022",
+		"module": "es2022",
+		"lib": ["es2022", "dom"],
 		"skipLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@rhenag/components": ["libs/components/src/index.ts"],
-			"@rhenag/designtokens": ["libs/designtokens/src/index.ts"],
-			"@rhenag/elements": ["libs/elements/src/index.ts"],
-			"@rhenag/shared/cypress-commands": [
+			"@okokok/components": ["libs/components/src/index.ts"],
+			"@okokok/designtokens": ["libs/designtokens/src/index.ts"],
+			"@okokok/elements": ["libs/elements/src/index.ts"],
+			"@okokok/shared/cypress-commands": [
 				"libs/shared/cypress-commands/src/index.ts"
 			],
-			"@rhenag/themes/lima": ["libs/themes/lima/src/index.ts"]
+			"@okokok/themes/web-dark": ["libs/themes/web-dark/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

@@ -1,5 +1,4 @@
 {
-	"root": "apps/designsystem-e2e",
 	"sourceRoot": "apps/designsystem-e2e/src",
 	"projectType": "application",
 	"targets": {

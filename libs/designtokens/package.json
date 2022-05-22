@@ -1,8 +1,8 @@
 {
-	"name": "@rhenag/designtokens",
+	"name": "@okokok/designtokens",
 	"version": "0.0.1",
 	"type": "commonjs",
-	"description": "Rhenag design tokens",
+	"description": "OKOKOK design tokens",
 	"files": [
 		"build",
 		"properties"
@@ -14,7 +14,7 @@
 		"transform-figma-tokens": "ts-node ./src/lib/transform-figma-tokens.ts",
 		"test": "jest tests --coverage=false"
 	},
-	"author": "Oliver Kierepka <oliver.kierepka@rhenag.de>",
+	"author": "Oliver Kierepka <oliver.kierepka@okokok.de>",
 	"license": "Apache-2.0",
 	"dependencies": {
 		"style-dictionary": "^3"
@@ -31,6 +31,6 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://git-lima.rhenag.de/design-system/design-token-transformer.git"
+		"url": "git+https://git-okokok.okokok.de/design-system/design-token-transformer.git"
 	}
 }

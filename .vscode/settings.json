@@ -14,5 +14,6 @@
 		"source.fixAll.eslint": true,
 		"source.organizeImports": true
 	},
-	"xd.globalEditor": false
+	"xd.globalEditor": false,
+	"angular.log": "verbose"
 }

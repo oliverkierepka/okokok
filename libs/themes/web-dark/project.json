@@ -1,0 +1,31 @@
+{
+	"sourceRoot": "libs/themes/web-dark/src",
+	"targets": {
+		"build": {
+			"executor": "@nrwl/js:tsc",
+			"outputs": ["{options.outputPath}"],
+			"options": {
+				"outputPath": "dist/libs/themes/web-dark",
+				"main": "libs/themes/web-dark/src/index.ts",
+				"tsConfig": "libs/themes/web-dark/tsconfig.lib.json",
+				"assets": ["libs/themes/web-dark/*.md"]
+			}
+		},
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/themes/web-dark/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/themes/web-dark"],
+			"options": {
+				"jestConfig": "libs/themes/web-dark/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": ["type:ui"]
+}

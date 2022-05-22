@@ -1,26 +1,26 @@
-# Rhenag Designsystem Monorepo
+# OKOKOK Designsystem Monorepo
 
-This monorepo is the home of the rhenag designsystem.
-It contains rhenag elements – the component library for rhenag, the rhenag icon library, themes for rhenag components and lima 2.0 ("rhenag" is the default theme for elements) and design a designtokens which contains all the colors, sizes, fonts, icons, etc. that are used throughout the whole rhenag ecosystem.
+This monorepo is the home of the okokok designsystem.
+It contains okokok elements – the component library for okokok, the okokok icon library, themes for okokok components and okokok 2.0 ("okokok" is the default theme for elements) and design a designtokens which contains all the colors, sizes, fonts, icons, etc. that are used throughout the whole okokok ecosystem.
 
-- [Rhenag Designsystem Monorepo](#rhenag-designsystem-monorepo)
-	- [Development workflow](#development-workflow)
-		- [Creating new components](#creating-new-components)
-	- [Quick Start & Documentation](#quick-start--documentation)
-	- [Generate a new application](#generate-a-new-application)
-	- [Generate a new library](#generate-a-new-library)
-	- [Development server](#development-server)
-	- [Code scaffolding](#code-scaffolding)
-	- [Build](#build)
-	- [Running unit tests](#running-unit-tests)
-	- [Running end-to-end tests](#running-end-to-end-tests)
-	- [Understand your workspace](#understand-your-workspace)
-	- [Further help](#further-help)
+-   [OKOKOK Designsystem Monorepo](#okokok-designsystem-monorepo)
+    -   [Development workflow](#development-workflow)
+        -   [Creating new components](#creating-new-components)
+    -   [Quick Start & Documentation](#quick-start--documentation)
+    -   [Generate a new application](#generate-a-new-application)
+    -   [Generate a new library](#generate-a-new-library)
+    -   [Development server](#development-server)
+    -   [Code scaffolding](#code-scaffolding)
+    -   [Build](#build)
+    -   [Running unit tests](#running-unit-tests)
+    -   [Running end-to-end tests](#running-end-to-end-tests)
+    -   [Understand your workspace](#understand-your-workspace)
+    -   [Further help](#further-help)
 
 ## Development workflow
 
 The app documenting all libraries is hosted under /src/app/designsystem
-The component library called @rhenag/elements is hosted under /src/libs/elements.
+The component library called @okokok/elements is hosted under /src/libs/elements.
 
 1. Run <code>nx serve</code> to start the development server serving the default project which is <code>designsystem</code>. Navigate to http://localhost:4200
 2. Make some changes to an existing component
@@ -29,7 +29,7 @@ The component library called @rhenag/elements is hosted under /src/libs/elements
 
 ### Creating new components
 
-To create a new component run <code>nx g component [componentname] --project=@rhenag/components --export</code>. The new component is scaffoled into the folder <code>/src/lib/components</code>.
+To create a new component run <code>nx g component [componentname] --project=@okokok/components --export</code>. The new component is scaffoled into the folder <code>/src/lib/components</code>.
 
 ## Quick Start & Documentation
 
@@ -51,11 +51,11 @@ When using Nx, you can create multiple applications and libraries in the same wo
 
 Run `ng g @nrwl/angular:lib my-lib` to generate a library.
 
-`nx g lib --importPath=@rhenag/mylib --name=mylib --tags=scope:mylib`
+`nx g lib --importPath=@okokok/mylib --name=mylib --tags=scope:mylib`
 
 > You can also use any of the plugins above to generate libraries as well.
 
-Libraries are shareable across libraries and applications. They can be imported from `@rhenag/mylib`.
+Libraries are shareable across libraries and applications. They can be imported from `@okokok/mylib`.
 
 ## Development server
 

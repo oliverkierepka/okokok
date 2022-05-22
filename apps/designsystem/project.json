@@ -1,8 +1,7 @@
 {
 	"projectType": "application",
-	"root": "apps/designsystem",
 	"sourceRoot": "apps/designsystem/src",
-	"prefix": "rh",
+	"prefix": "ok",
 	"targets": {
 		"build": {
 			"executor": "@angular-devkit/build-angular:browser",
@@ -85,7 +84,7 @@
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/apps/designsystem"],
 			"options": {
-				"jestConfig": "apps/designsystem/jest.config.js",
+				"jestConfig": "apps/designsystem/jest.config.ts",
 				"passWithNoTests": true,
 				"codeCoverage": true
 			}

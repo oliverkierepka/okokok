@@ -1,8 +1,7 @@
 {
 	"projectType": "library",
-	"root": "libs/components",
 	"sourceRoot": "libs/components/src",
-	"prefix": "rh",
+	"prefix": "ok",
 	"targets": {
 		"build": {
 			"executor": "@nrwl/angular:package",
@@ -24,7 +23,7 @@
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/libs/components"],
 			"options": {
-				"jestConfig": "libs/components/jest.config.js",
+				"jestConfig": "libs/components/jest.config.ts",
 				"passWithNoTests": true
 			}
 		},

@@ -51,7 +51,7 @@ const propertiesToCTI: PropertiesToCTI = {
 	'line-height': { category: 'size', type: 'line-height' },
 	size: { category: 'size', type: 'icon' },
 };
-const prefix = 'rh';
+const prefix = 'ok';
 
 const CTITransform: AttributeTransform.AttributeTransform = {
 	type: `attribute`,
@@ -221,7 +221,7 @@ module.exports = {
 		},
 		// Web output in css format
 		css: {
-			prefix: 'rh',
+			prefix: 'ok',
 			transforms: [
 				'attribute/cti',
 				'name/cti/kebab',

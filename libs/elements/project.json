@@ -2,7 +2,7 @@
 	"projectType": "library",
 	"root": "libs/elements",
 	"sourceRoot": "libs/elements/src",
-	"prefix": "rh",
+	"prefix": "ok",
 	"targets": {
 		"test": {
 			"executor": "@nrwl/jest:jest",

@@ -9,7 +9,7 @@
 			"projectType": "library",
 			"root": "libs/elements",
 			"sourceRoot": "libs/elements/src",
-			"prefix": "rh",
+			"prefix": "ok",
 			"targets": {
 				"build": {
 					"executor": "@nrwl/angular:package",
@@ -31,7 +31,7 @@
 					"executor": "@nrwl/jest:jest",
 					"outputs": ["coverage/libs/elements"],
 					"options": {
-						"jestConfig": "libs/elements/jest.config.js",
+						"jestConfig": "libs/elements/jest.config.ts",
 						"passWithNoTests": true
 					}
 				},
@@ -48,6 +48,6 @@
 			"tags": []
 		},
 		"shared-cypress-commands": "libs/shared/cypress-commands",
-		"themes-lima": "libs/themes/lima"
+		"theme-web-dark": "libs/themes/web-dark"
 	}
 }

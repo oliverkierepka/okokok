@@ -1,5 +1,4 @@
 {
-	"root": "libs/shared/cypress-commands",
 	"sourceRoot": "libs/shared/cypress-commands/src",
 	"projectType": "library",
 	"targets": {

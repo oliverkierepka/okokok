@@ -3,7 +3,6 @@ const path = require('node:path');
 const _ = require('lodash');
 const Color = require('tinycolor2');
 const StyleDictionary = require('style-dictionary');
-console.log(__dirname);
 const tokens = require('./../../tokens');
 
 import DesignToken = require('style-dictionary/types/DesignToken');

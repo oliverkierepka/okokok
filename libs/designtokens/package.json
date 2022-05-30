@@ -9,7 +9,7 @@
 	],
 	"scripts": {
 		"build": "ts-node ./src/lib/build.ts",
-		"build:watch": "npm run build && chokidar  \"src/lib/tokens/**/*.json\" --command \"npm run build\"",
+		"build:watch": "npm run build && chokidar \"src/lib/tokens/**/*.json\" --command \"npm run build\"",
 		"clean": "rm -rf src/lib/build",
 		"transform-figma-tokens": "ts-node ./src/lib/transform-figma-tokens.ts",
 		"test": "jest tests --coverage=false"

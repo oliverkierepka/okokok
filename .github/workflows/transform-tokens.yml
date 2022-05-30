@@ -14,14 +14,11 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             # this lets us work in the actual repository
-            - uses: actions/checkout@master
-            # change to designtokens directory
-            - name: change to designtokens lib folder
-              run: 'cd libs/designtokens'
+            - uses: actions/checkout@v3
             # if the folder named "tokens" does not exist, create it
             - name: mkdir "tokens" directory
               # change tokens here (and in line 32) if you want to use a differently named folder
-              run: 'mkdir -p tokens'
+              run: 'mkdir -p libs/designtokens/src/lib/input && ls libs/designtokens/src/lib'
             # this creates a json file from the stringified json from the request body
             - name: create json from request body
               id: create-json
@@ -32,19 +29,19 @@ jobs:
                   # it uses the json string that was send as the tokens parameter
                   json: ${{ github.event.client_payload.tokens }}
                   # it uses the directory named "tokens" to store this json file (change this if you changed it above to use a different folder)
-                  dir: 'tokens'
+                  dir: 'libs/designtokens/src/lib/input'
             # we now initialize node to run amazon style dictionary to compile the tokens
             - name: Use Node.js 16.x
-              uses: actions/setup-node@v1
+              uses: actions/setup-node@v3
               with:
-                  # we use version 16.x of node
-                  node-version: 16.x
+                  # we use version 16 of node
+                  node-version: '16'
+            # Check if we are in the correct directory (should be libs/designtokens)
+            - name: Current working directory is...
+              run: 'pwd && ls'
             # We now run npm i to install all dependencies and run the "transfrom" script that is defined in the package.json (change this if you need to)
-            - name: Transform design tokens
-              run: pwd
-              run: cd libs/designtokens
-              run: 'npm i'
-              run: 'npm run transform-figma-tokens'
+            - name: Run Installation and transformation
+              run: 'cd libs/designtokens && npm i && npm run transform-figma-tokens'
             # We now create a pull request
             - name: Create PR
               uses: peter-evans/create-pull-request@v3

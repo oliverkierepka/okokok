@@ -9,6 +9,8 @@ This repo provides an npm script which is bound to a gitlab action. This action 
 
 ## What is where?
 
+TODO: need to update this 
+
 ```
 ├── …
 ├── config.json <--- style-dictionary configuration

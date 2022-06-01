@@ -1,7 +1,7 @@
-# OKOKOK Designsystem
+# OKOKOK Designsystem (NX Monorepo)
 
 This monorepo is the home of the okokok designsystem.
-It contains okokok elements – the component library for okokok, the okokok icon library, themes for okokok components and okokok 2.0 ("okokok" is the default theme for elements) and design a designtokens which contains all the colors, sizes, fonts, icons, etc. that are used throughout the whole okokok ecosystem.
+It contains okokok elements – the component library for okokok, the okokok icon library, themes ("okokok" is the default theme for elements) and designtokens which contain all the colors, sizes, fonts, icons, etc. that are used throughout the whole okokok ecosystem.
 
 -   [OKOKOK Designsystem Monorepo](#okokok-designsystem-monorepo)
     -   [Development workflow](#development-workflow)

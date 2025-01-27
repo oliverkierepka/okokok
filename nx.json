@@ -11,37 +11,16 @@
 					"package",
 					"prepare"
 				],
-				"accessToken": "NmUzY2I1MjUtY2Q0MS00NDdhLWFiMzgtYWEzMTNlMDI5ZDI4fHJlYWQtd3JpdGU="
+				"accessToken": "YjlhMThhYjEtOTg4My00OWMyLWJiNWEtMWE1M2ViYmExM2RifHJlYWQtd3JpdGU="
 			}
 		}
 	},
 	"targetDependencies": {
-		"build": [
-			{
-				"target": "build",
-				"projects": "dependencies"
-			}
-		],
-		"prepare": [
-			{
-				"target": "prepare",
-				"projects": "dependencies"
-			}
-		],
-		"package": [
-			{
-				"target": "package",
-				"projects": "dependencies"
-			}
-		]
+		"build": [{ "target": "build", "projects": "dependencies" }],
+		"prepare": [{ "target": "prepare", "projects": "dependencies" }],
+		"package": [{ "target": "package", "projects": "dependencies" }]
 	},
-	"affected": {
-		"defaultBase": "main"
-	},
-	"pluginsConfig": {
-		"@nrwl/js": {
-			"analyzeSourceFiles": false
-		}
-	},
+	"affected": { "defaultBase": "main" },
+	"pluginsConfig": { "@nrwl/js": { "analyzeSourceFiles": false } },
 	"defaultProject": "designsystem"
 }
